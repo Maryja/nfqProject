@@ -1,0 +1,23 @@
+header{
+    background: #717175;
+    display: flex;
+    justify-content: space-around;
+    .active {
+        color: #141e0e;
+        font-weight:bold;
+    }
+    a{
+        color: #fff;
+        font-size:36px;
+        padding: 25px 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include tablet-h {
+            font-size: 70px;
+        }
+        @include mobile{
+            font-size: 20px;
+            padding: 40px;
+        }
+    }
+}
