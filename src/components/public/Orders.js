@@ -11,6 +11,7 @@ class Orders extends React.Component{
     this.setState({search:e.target.value.substr(0,20)});
   }
     render(){
+    const message = 'Nieko nera';
       let filteredOrders = orders.filter(
           (order)=>{
 
@@ -32,7 +33,7 @@ class Orders extends React.Component{
             return(
                 <div>
                   <ul>
-                    <li>
+                    <li key={order.id}>
                   <h2>{order.name}</h2>
                   <p>{order.id}</p>
                     </li>

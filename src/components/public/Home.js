@@ -1,5 +1,6 @@
 import React from 'react';
-import {service} from '../../sandbox/named-exports';
+import {products} from '../../sandbox/named-exports';
+import phone from '../../img/phone.png'
 
 class Home extends React.Component{
 
@@ -12,10 +13,10 @@ class Home extends React.Component{
   }
     render(){
 
-    let filteredServices = service.filter(
-        (service)=>{
+    let filteredProducts = products.filter(
+        (product)=>{
 
-          return service.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+          return product.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
 
         }
     );
@@ -26,17 +27,24 @@ class Home extends React.Component{
                 <input type="search"
                        value={this.state.search}
                        onChange={this.updateSearch.bind(this)}
-                       placeholder='paieška'/>
+                       placeholder='Search'/>
               </div>
         <div className='home'>
-          {filteredServices.map((services)=>{
+          {filteredProducts.map((product)=>{
             return(
 
                 <div>
-          <div className='programs'>
-            <h2>{services.name}</h2>
+          <div className='products'>
+            <img src={phone} alt="phone"/>
+            <h2>{product.name}</h2>
+            <ul>
+              <li>Color:{product.color}</li>
+              <li>Operating system:{product.system}</li>
+              <li>Camera:{product.camera}</li>
+              <li>Price:{product.price}</li>
+            </ul>
 
-            <div className='btn'>Užsakyti</div>
+            <div className='btn'>Order</div>
           </div>
 
                 </div>

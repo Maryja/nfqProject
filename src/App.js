@@ -5,6 +5,7 @@ import Orders from './components/public/Orders';
 import Home from './components/public/Home';
 import Notfound from './components/layout/Notfound';
 import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
         <Route path='/orders' component={Orders}/>
           <Route component={Notfound}/>
         </Switch>
+          <Footer/>
         </div>
       </BrowserRouter>
     );
