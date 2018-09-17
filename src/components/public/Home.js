@@ -16,7 +16,11 @@ class Home extends React.Component{
     let filteredProducts = products.filter(
         (product)=>{
 
-          return product.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1;
+          return product.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1||
+          product.color.toLowerCase().indexOf(this.state.search) !==-1 ||
+          product.system.toLowerCase().indexOf(this.state.search) !==-1 ||
+          product.camera.toLowerCase().indexOf(this.state.search) !==-1 ||
+          product.price.toLowerCase().indexOf(this.state.search) !==-1
 
         }
     );
