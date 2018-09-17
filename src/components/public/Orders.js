@@ -1,63 +1,42 @@
 import React from 'react';
 import {orders, service} from '../../sandbox/named-exports';
-
-
+import { DataTable } from 'react-data-components';
+import 'react-data-components/css/table-twbs.css'
 
 class Orders extends React.Component{
 
-  state={
-    search:'',
-  };
-
-  updateSearch(e){
-    this.setState({search:e.target.value.substr(0,20)});
-  }
-
-
-
     render(){
+    let data = orders.map((order)=> (
+      { name:order.name,
+      color:order.color,
+      system:order.system,
+      camera:order.camera,
+      price:order.price
+      }
+    ));
 
+      let columns = [
+      {title: 'Name', prop:'name'},
+      {title: 'Color', prop:'color'},
+      {title: 'System', prop:'system'},
+      {title: 'Camera', prop:'camera'},
+      {title: 'Price', prop:'price'}
+    ];
 
-      let filteredOrders = orders.filter(
-          (order)=>{
-
-            return (
-                order.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1 ||
-                order.color.toLowerCase().indexOf(this.state.search) !==-1 ||
-                order.system.toLowerCase().indexOf(this.state.search) !==-1 ||
-                order.camera.toLowerCase().indexOf(this.state.search) !==-1 ||
-                order.price.toLowerCase().indexOf(this.state.search) !==-1
-          )
-          }
-      );
 
         return (
         <div>
+          <DataTable
+              className="container"
+              keys="id"
+              columns={columns}
+              initialData={data}
+              initialPageLength={5}
+              initialSortBy={{ prop: 'city', order: 'descending' }}
+              pageLengthOptions={[ 5, 20, 50 ]}
+          />
 
 
-          <div className="search">
-            <input type="search"
-                   value={this.state.search}
-                   onChange={this.updateSearch.bind(this)}
-                   placeholder='paieška'/>
-          </div>
-          {filteredOrders.map((order)=>{
-            return(
-                <div>
-                  <ul>
-                    <li key={order.name}>
-                  <h2>{order.name}</h2>
-                    </li>
-                    <li>{order.color}</li>
-                    <li>{order.system}</li>
-                    <li>{order.camera}</li>
-                    <li>{order.price}</li>
-
-                  </ul>
-
-                </div>
-            )
-          })}
 
         </div>
         );
