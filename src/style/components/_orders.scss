@@ -1,0 +1,22 @@
+.orders {
+    height: 53.6vh;
+    background: #bfced3;
+    overflow: auto;
+    .search {
+        height: 5.8vh;
+    }
+ .container {
+     margin-top: 3em;
+     select {
+         outline: none;
+         border-radius: 10px;
+         margin-left: 1em;
+     }
+     input {
+         outline: none;
+         border-radius: 10px;
+         margin-left: 2.2em;
+     }
+ }
+}
+

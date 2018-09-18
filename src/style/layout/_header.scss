@@ -1,5 +1,5 @@
 header {
-    height: 50vh;
+    height: 40vh;
     background-image: url("../img/cover.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -27,12 +27,18 @@ header {
                 font-family: 'Gamja Flower', cursive;
                 margin-right: 2em;
             }
+            a:hover {
+                text-decoration: none;
+                color: white;
+            }
             .active{
-                border: 1px solid;
+                border: 1px solid white;
                 box-sizing: border-box;
                 border-radius: 10px;
                 background: rgba(0,0,0,0.7);
                 padding: 0.5em;
+                text-decoration: none;
+                color: white;
             }
         }
 }

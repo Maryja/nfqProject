@@ -1,5 +1,5 @@
 import React from 'react';
-import {orders, service} from '../../sandbox/named-exports';
+import {orders} from '../../sandbox/named-exports';
 import { DataTable } from 'react-data-components';
 import 'react-data-components/css/table-twbs.css'
 
@@ -7,11 +7,12 @@ class Orders extends React.Component{
 
     render(){
     let data = orders.map((order)=> (
-      { name:order.name,
-      color:order.color,
-      system:order.system,
-      camera:order.camera,
-      price:order.price
+      { id:Math.random(),
+        name:order.name,
+        color:order.color,
+        system:order.system,
+        camera:order.camera,
+        price:order.price
       }
     ));
 
@@ -25,7 +26,8 @@ class Orders extends React.Component{
 
 
         return (
-        <div>
+        <div className='orders'>
+          <div className='search'></div>
           <DataTable
               className="container"
               keys="id"

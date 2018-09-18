@@ -37,7 +37,7 @@ class Home extends React.Component{
           {filteredProducts.map((product)=>{
             return(
 
-                <div>
+                <div  key={Math.random()}>
           <div className='products'>
             <img src={phone} alt="phone"/>
             <h2>{product.name}</h2>

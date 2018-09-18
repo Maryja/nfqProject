@@ -1,15 +1,28 @@
 .home{
+    height: 45vh;
     display: flex;
     justify-content: space-around;
     padding-top: 3em;
     padding-bottom: 0.8em;
-    background: #45607c;
+    background: #bfced3;
     .products{
         text-align: center;
         cursor: pointer;
-        li{
-            font-family: 'Gamja Flower', cursive;
 
+        h2{
+            font-family: 'Gamja Flower', cursive;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        li{
+            font-size: 15px;
+
+        }
+        .btn {
+            border-radius: 10px;
+            border: 1px solid black;
+            box-sizing: border-box;
+            cursor: not-allowed;
         }
     }
     }
